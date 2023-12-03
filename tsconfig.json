@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"typeRoots": ["node_modules/@types"],
+		"types": ["node"],
+		"baseUrl": "./src",
+		"paths": {
+		  "@lib/*": ["lib/*"]
+		},
+	},
+	"lib": ["es2015"]
+  }
