@@ -4,7 +4,7 @@ import { format_day } from '@lib/string';
 const day = 4;
 
 import { readlines } from '@lib/readlines';
-import { IndexMap, sum, unique_map } from '@lib/maps';
+import { IndexMap, count_map, sum, unique_map } from '@lib/maps';
 
 const lines = readlines(`src/2023/${format_day(day)}/input.txt`);
 
@@ -51,7 +51,7 @@ const part1 = (): number => {
 
 const part2 = (): number => {
 	let cards = lines.map((l) => parse_line(l));
-	let map: IndexMap<number, number> = cards.reduce((map, card) => { map[card.number] = 1; return map; }, {});
+	let map: IndexMap<number, number> = count_map(cards.map((c) => c.number));
 
 	const add_won_cards = (card: Card, mult: number): void => {
 		let copies_won = get_won_in_card(card);
