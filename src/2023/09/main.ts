@@ -56,28 +56,10 @@ const part1 = (): number => {
 	return total;
 };
 
-const extrapolate_diff_first = (above: number[], diff: number[]): number[] => {
-	const last = diff[0];
-	const last_above = above[0];
-	diff.unshift(last - last_above);
-	return diff;
-}
-
-const get_extrapolated_first = (numbers: number[]): number => {
-	const diffs = get_diffs(numbers).reverse();
-	let i = diffs.length - 1;
-
-	diffs[0].unshift(0);
-	for(let i = 1; i < diffs.length; i++) {
-		diffs[i] = extrapolate_diff_first(diffs[i-1], diffs[i]);
-	}
-	return diffs[i][0];
-}
-
 const part2 = (): number => {
 	let total = 0;
 	for(let line of lines) {
-		total += get_extrapolated_first(parse_line(line));
+		total += get_extrapolated(parse_line(line).reverse());
 	}
 	return total;
 }
