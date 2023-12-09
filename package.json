@@ -8,7 +8,8 @@
     "build": "tsc -p tsconfig.json",
     "2015-01": "npm run build && npx ts-node src/2015/01/main.ts",
     "2023-01": "npm run build && npx ts-node src/2023/01/main.ts",
-    "2023-04": "npm run build && npx ts-node src/2023/04/main.ts"
+    "2023-04": "npm run build && npx ts-node src/2023/04/main.ts",
+    "2023-09": "npm run build && npx ts-node src/2023/09/main.ts"
   },
   "author": "",
   "license": "ISC",

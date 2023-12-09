@@ -24,4 +24,8 @@ export const unique_map : <T extends Indexable>(array: T[]) => IndexMap<T, boole
 	return map;
 }, {} as IndexMap<Indexable, boolean>);
 
+export const is_all_n = <T>(array: T[], n: T): boolean => {
+	return array.reduce((t,v) => t && v === n, true);
+}
+
 export const sum = (map: {[key: Indexable]: number}) => Object.values(map).reduce((c,v) => c+v, 0);
